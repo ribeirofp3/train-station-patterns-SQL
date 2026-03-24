@@ -14,10 +14,10 @@ Key Concepts: Joins, Subqueries, Aggregations, CASE Statements.
 Goal: Identify which cities have the highest volume of trips to optimize bike distribution.
 Solution :
 
-SELECT cidade, count(id_estacao_partida) Est_começadas
-FROM Estacoes e 
-JOIN Viagens v on e.id_estacao = v.id_estacao_partida
-GROUP BY cidade;
+SELECT city, count(id_start_station) Station_st
+FROM Station s 
+JOIN Viagens v on e.station_id = v.id_start_id
+GROUP BY city;
 
 
 ### Identifying Trip Outliers
@@ -25,30 +25,30 @@ GROUP BY cidade;
 Goal: Find trips with a duration strictly greater than the overall average to identify potential bike misuse or long-distance patterns.
 Solution :
 
-SELECT id_viagem, duracao_minutos
-FROM Viagens
-WHERE duracao_minutos > (SELECT AVG(duracao_minutos) Media_Viagens
-FROM Viagens);
+SELECT trip_id, duration_minutes
+FROM Trips
+WHERE duration_minutes > (SELECT AVG(duration_minutes) AVG_Trips
+FROM Trips);
 
 
 ### Trip Categorization (Focus: Milan)
 
 Goal: Segment trips in Milan into 'Short', 'Medium', or 'Long' categories to help marketing understand how the service is being used in the city.
 
-If the trip lasted less than 20 minutes, write 'Curta'.
-If it lasted between 20 and 60 minutes, write 'Media'.
-If it lasted more than 60 minutes, write 'Longa'.
+If the trip lasted less than 20 minutes, write 'Short'.
+If it lasted between 20 and 60 minutes, write 'Medium'.
+If it lasted more than 60 minutes, write 'Long'.
 Show only trips from the city of 'Milano'.
 
 Solution :
 SELECT 
-    e.nome_estacao, 
+    s.station_name, 
     CASE 
-        WHEN v.duracao_minutos < 20 THEN 'Short'
-        WHEN v.duracao_minutos BETWEEN 20 AND 60 THEN 'Medium'
-        WHEN v.duracao_minutos > 60 THEN 'Long'
+        WHEN t.duration_minutes < 20 THEN 'Short'
+        WHEN t.duration_minutes BETWEEN 20 AND 60 THEN 'Medium'
+        WHEN t.duration_minutes > 60 THEN 'Long'
         ELSE 'N/A'
     END AS duration_category
-FROM Estacoes e
-JOIN Viagens v ON e.id_estacao = v.id_estacao_partida
-WHERE e.cidade = 'Milano';
+FROM Stations s
+JOIN Trips t ON e.station_id = t.start_station_id
+WHERE s.city = 'Milano';
