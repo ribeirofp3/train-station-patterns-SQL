@@ -7,9 +7,8 @@ Tech Stack
 Database: PostgreSQL / MySQL
 Key Concepts: Joins, Subqueries, Aggregations, CASE Statements.
 
-#####
 
-1° - High-Traffic Cities
+## High-Traffic Cities
 
 Goal: Identify which cities have the highest volume of trips to optimize bike distribution.
 Solution :
@@ -19,8 +18,8 @@ FROM Estacoes e
 JOIN Viagens v on e.id_estacao = v.id_estacao_partida
 GROUP BY cidade;
 
-#####
-2° - Identifying Trip Outliers
+
+## Identifying Trip Outliers
 
 Goal: Find trips with a duration strictly greater than the overall average to identify potential bike misuse or long-distance patterns.
 Solution :
@@ -30,8 +29,8 @@ FROM Viagens
 WHERE duracao_minutos > (SELECT AVG(duracao_minutos) Media_Viagens
 FROM Viagens);
 
-#####
-3° - Trip Categorization (Focus: Milan)
+
+## Trip Categorization (Focus: Milan)
 
 Goal: Segment trips in Milan into 'Short', 'Medium', or 'Long' categories to help marketing understand how the service is being used in the city.
 
