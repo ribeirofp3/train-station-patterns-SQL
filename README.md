@@ -3,7 +3,7 @@
 ## Project Overview
 This project focuses on **Operational Efficiency** and **User Behavior Patterns** within a simulated Italian bike-sharing system. Using SQL (PostgreSQL), I extracted actionable insights to help fleet managers optimize bike distribution and understand urban mobility trends in high-traffic hubs like Milan.
 
-## 🛠️ Tech Stack & Tools
+## Tech Tools
 * **Database Engine:** SQL Server (T-SQL)
 * **IDE:** SQL Server Management Studio (SSMS)
 * **Key Concepts:** Complex Joins, Window Functions (OVER/PARTITION BY), CTEs, and Subqueries.
