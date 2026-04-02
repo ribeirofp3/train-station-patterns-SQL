@@ -14,9 +14,9 @@ Key Concepts: Joins, Subqueries, Aggregations, CASE Statements.
 Goal: Identify which cities have the highest volume of trips to optimize bike distribution.
 Solution :
 
-SELECT city, count(id_start_station) Station_st
+SELECT city, count(*) Station_st
 FROM Station s 
-JOIN Viagens v on e.station_id = v.id_start_id
+JOIN Trips t on s.station_id = t.id_start_id
 GROUP BY city;
 
 
@@ -50,5 +50,5 @@ SELECT
         ELSE 'N/A'
     END AS duration_category
 FROM Stations s
-JOIN Trips t ON e.station_id = t.start_station_id
+JOIN Trips t ON s.station_id = t.start_station_id
 WHERE s.city = 'Milano';
