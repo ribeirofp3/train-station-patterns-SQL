@@ -11,14 +11,14 @@ Environment: SQL Server Management Studio (SSMS)
 
 Analytical Techniques: T-SQL, Common Table Expressions (CTEs), Window Functions, and Query Optimization.
 
-## Key Insights & Business Value
-Peak Demand Mapping: Identified critical peak hours for each station, providing a baseline for optimized train frequency and staffing.
+## Key Insights & Business Value 
+Commuter vs. Long-Haul Segmentation: Used CTEs and Case Logic to categorize travel patterns in major hubs like Milano. This identifies whether a station serves primarily daily commuters or long-distance travelers, informing ticket pricing and seating capacity strategies.
 
-Passenger Throughput Ranking: Ranked stations by volume to prioritize infrastructure maintenance and passenger service resource allocation.
+Operational Outlier Detection: Implemented Subqueries to identify "Trip Outliers"—routes that exceed the global average duration. This allows authorities to pinpoint specific corridors facing systemic delays or infrastructure bottlenecks.
 
-Comparative Traffic Flow: Analyzed weekday vs. weekend patterns, uncovering shifts in demand that inform dynamic scheduling strategies.
+Passenger Throughput & City Dynamics: Leveraged Multi-way Joins to calculate total urban mobility (arrivals + departures). By ranking cities by total passenger volume, the project prioritizes resource allocation for high-traffic hubs like Milano and Torino.
 
-Efficiency Analysis: Highlighted traffic bottlenecks to suggest potential improvements in terminal dwell times and transit throughput.
+Performance Reliability Index: Analyzed trip statuses (On-Time vs. Delayed) across specific corridors to create a reliability baseline, essential for improving passenger trust and service predictability.
 
 ---
 *This project is part of my data analysis portfolio.*
