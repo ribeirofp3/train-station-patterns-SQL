@@ -1,20 +1,24 @@
 # Train Station Pattern Analysis
-
-### Analyzing Patterns in Train Stations
-This project uses SQL to explore and identify flow patterns, peak hours, and passenger behavior across various railway stations.
+This project focuses on transforming complex, high-volume raw train movement data into actionable operational insights. By leveraging advanced SQL techniques, the project identifies passenger flow trends, optimizes scheduling, and evaluates station efficiency.
 
 ## Objective
-To transform raw train movement data into actionable insights, helping to understand which stations have the highest demand and how timing impacts transportation efficiency.
+To translate raw transactional data into a strategic roadmap for transport authorities, identifying capacity bottlenecks and peak-hour demand to improve overall transportation efficiency and resource allocation.
 
-## Technologies Used
-* **Database:** Microsoft SQL Server
-* **Language:** SQL Server Management Studio (SSMS)
-* **Visualization Tool:** T-SQL (Transact-SQL)
+## Tech Stack
+Database: Microsoft SQL Server
 
-## Key Queries (Insights)
-* **Time Patterns:** Identifying peak hours for each station.
-* **Popular Stations:** Ranking stations based on the highest passenger volume.
-* **Weekly Flow:** Comparing weekday vs. weekend traffic.
+Environment: SQL Server Management Studio (SSMS)
+
+Analytical Techniques: T-SQL, Common Table Expressions (CTEs), Window Functions, and Query Optimization.
+
+## Key Insights & Business Value
+Peak Demand Mapping: Identified critical peak hours for each station, providing a baseline for optimized train frequency and staffing.
+
+Passenger Throughput Ranking: Ranked stations by volume to prioritize infrastructure maintenance and passenger service resource allocation.
+
+Comparative Traffic Flow: Analyzed weekday vs. weekend patterns, uncovering shifts in demand that inform dynamic scheduling strategies.
+
+Efficiency Analysis: Highlighted traffic bottlenecks to suggest potential improvements in terminal dwell times and transit throughput.
 
 ---
 *This project is part of my data analysis portfolio.*
